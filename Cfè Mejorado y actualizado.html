@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Café &amp; Letras</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;1,9..144,400&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav>
+        <a href="#frases">Frases</a>
+        <a href="#recomendaciones">Recomendación</a>
+        <a href="#carta">Carta</a>
+        <a href="#lectura">Lectura</a>
+    </nav>
+
+    <header>
+        <p id="saludo">Hola</p>
+        <h1>Café &amp; Letras</h1>
+        <p>Una taza, un libro y una buena frase para empezar el día.</p>
+        <p id="reloj">--:--</p>
+    </header>
+
+    <main>
+
+        <!-- ===== FRASES ===== -->
+        <section id="tarjeta" class="panel">
+            <div id="filtros">
+                <button class="filtro activo" data-tema="Todas">Todas</button>
+                <button class="filtro" data-tema="Lectura">Lectura</button>
+                <button class="filtro" data-tema="Libros">Libros</button>
+                <button class="filtro" data-tema="Sabiduría">Sabiduría</button>
+            </div>
+
+            <p id="contador">Frases vistas: 1</p>
+            <p id="texto-frase">“Leer es soñar de la mano de otro.”</p>
+            <p id="autor-frase">— Fernando Pessoa</p>
+            <span id="etiqueta-tema">Lectura</span>
+
+            <div class="acciones">
+                <button id="btn-anterior">← Anterior</button>
+                <button id="btn-nueva-frase" class="b-acento">Nueva Frase Inspiradora</button>
+                <button id="btn-copiar" class="b-turquesa">Copiar</button>
+                <button id="btn-favorita" class="b-coral">♡ Favorita</button>
+            </div>
+
+            <div class="acciones">
+                <button id="btn-whatsapp" class="b-verde">Compartir</button>
+                <button id="btn-auto" class="b-amarillo">▶ Automática</button>
+                <button id="btn-letra-menos" aria-label="Achicar letra">A−</button>
+                <button id="btn-letra-mas" aria-label="Agrandar letra">A+</button>
+            </div>
+
+            <div class="acciones">
+                <button id="btn-cambiar-tema" class="b-noche">Cambiar Modo Claro/Oscuro</button>
+                <button id="btn-paleta" class="b-arcoiris">🎨 Cambiar color</button>
+            </div>
+
+            <p class="ayuda">Tip: apretá la barra espaciadora para una frase nueva.</p>
+        </section>
+
+        <!-- ===== FAVORITAS ===== -->
+        <section id="favoritos" class="panel">
+            <h2>Mis frases favoritas (<span id="cantidad-favoritas">0</span>)</h2>
+            <p id="sin-favoritos">Todavía no guardaste ninguna. Tocá “♡ Favorita”.</p>
+            <ul id="lista-favoritos"></ul>
+        </section>
+
+        <!-- ===== RECOMENDACIONES CON FOTOS ===== -->
+        <section id="recomendaciones" class="panel">
+            <h2>Recomendación del día</h2>
+            <figure>
+                <img id="img-reco" src="images/cafe.jpg" alt="Café con leche">
+                <figcaption>Foto ilustrativa · <a id="credito-reco" href="https://commons.wikimedia.org" target="_blank" rel="noopener">Wikimedia Commons</a></figcaption>
+            </figure>
+            <h3 id="nombre-reco">Café con leche</h3>
+            <p id="desc-reco"></p>
+            <p id="precio-reco"></p>
+            <div class="acciones">
+                <button id="btn-reco-anterior">← Anterior</button>
+                <span id="contador-reco">1 / 4</span>
+                <button id="btn-reco-siguiente" class="b-acento">Siguiente →</button>
+                <button id="btn-reco-pedir" class="b-coral">Pedir este</button>
+            </div>
+        </section>
+
+        <!-- ===== CARTA Y PEDIDO ===== -->
+        <section id="carta" class="panel">
+            <h2>Nuestra carta</h2>
+            <ul id="lista-carta"></ul>
+
+            <h2>Mi pedido</h2>
+            <p id="sin-pedido">Tu pedido está vacío.</p>
+            <ul id="lista-pedido"></ul>
+            <p id="total">Total: $ 0</p>
+            <div class="acciones">
+                <button id="btn-vaciar">Vaciar pedido</button>
+                <button id="btn-confirmar" class="b-verde">Confirmar pedido</button>
+            </div>
+        </section>
+
+        <!-- ===== TEMPORIZADOR DE LECTURA ===== -->
+        <section id="lectura" class="panel">
+            <h2>Temporizador de lectura</h2>
+            <p id="cuenta">15:00</p>
+            <div class="acciones">
+                <select id="minutos" aria-label="Minutos de lectura">
+                    <option value="5">5 min</option>
+                    <option value="10">10 min</option>
+                    <option value="15" selected>15 min</option>
+                    <option value="25">25 min</option>
+                </select>
+                <button id="btn-iniciar" class="b-verde">Iniciar</button>
+                <button id="btn-pausar" class="b-amarillo">Pausar</button>
+                <button id="btn-reiniciar">Reiniciar</button>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>© Café &amp; Letras · Prototipo · Fotos: Wikimedia Commons</p>
+    </footer>
+
+    <p id="mensaje" aria-live="polite"></p>
+
+    <script src="script.js"></script>
+</body>
+</html>
